@@ -1,0 +1,8 @@
+---
+zip:
+  service: Zip
+  include: ~
+  exclude: [ doc, work ]
+  ignore : ~
+  active : false
+

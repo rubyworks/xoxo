@@ -1,0 +1,14 @@
+= HISTORY
+
+== 1.0.0 // 2009-07-06
+
+This is essentially the XOXO library written Christian Neukirchen.
+While the library has been distributed as part of Facets for some
+time, there is no separate gem avaialbe for it. So this then is
+that stand-alone release. It differs from the original only in
+that it provides #to_xoxo.
+
+* 1 Major Enhancement
+
+    * Happy Birthday!
+
