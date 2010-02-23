@@ -23,7 +23,7 @@ require 'rexml/parsers/pullparser'
 #
 module XOXO
   # xoxo.rb version number
-  #VERSION = "1.0.0"
+  VERSION = "1.0.1"
 
   # Load and return a XOXO structure from the String, IO or StringIO or _xoxo_.
   #
