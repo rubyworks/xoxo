@@ -1,0 +1,17 @@
+#!mast -x Syckfile lib meta test [A-Z]*
+lib/xoxo.rb
+meta/authors
+meta/collection
+meta/created
+meta/description
+meta/homepage
+meta/name
+meta/released
+meta/repository
+meta/summary
+meta/title
+meta/version
+test/test_xoxo.rb
+README
+HISTORY
+COPYING
