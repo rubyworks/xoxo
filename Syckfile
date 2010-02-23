@@ -6,15 +6,6 @@ email:
   mailto  : ruby-talk@ruby-lang.org
   active  : true
 
-rubyforge:
-  service : Rubyforge
-  unixname: <%= project %>
-  groupid : ~
-  package : <%= package %>
-  sitemap:
-    doc/rdoc: <%= package %>
-  active  : false
-
 box:
   service: Box
   active : true
@@ -76,4 +67,13 @@ vclog:
   typed    : false
   output   : ~
   active   : false
+
+#rubyforge:
+#  service : Forge
+#  unixname: <%= collection %>
+#  groupid : ~
+#  package : <%= name %>
+#  sitemap:
+#    doc/rdoc: <%= name %>
+#  active  : false
 
