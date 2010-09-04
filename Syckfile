@@ -9,10 +9,7 @@ email:
 box:
   service: Box
   active : true
-  types  : [gem, tar]
-  include: [bin, demo, lib, meta, test, "[A-Z]*"]
-  exclude: [Syckfile]
-  master : false
+  types  : [gem]
 
 testrb:
   service  : testrb
@@ -36,12 +33,14 @@ rdoc:
   exclude  : ~
   main     : ~
   extra    : ~
+  output   : doc
   active   : true
 
 ridoc:
   service: RIDoc
   include: ~
   exclude: ~
+  output : ri
   active : true
 
 dnote:
