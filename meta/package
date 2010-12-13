@@ -1,7 +1,0 @@
-name : xoxo
-version: 1.0.1
-date : 2010-02-23
-
-requires:
-- syckle (build)
-

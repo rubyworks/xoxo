@@ -3,9 +3,12 @@ title     : XOXO
 summary   : XOXO Parser and Generator
 contact   : Thomas Sawyer <transfire@gmail.com>
 suite     : rubyworks
-copyright : Copyright (c) 2006 Christian Neukirchen
-license   : MIT
 created   : 2006-01-01
+license   : chneukirchen
+copyright : Copyright (c) 2006 Christian Neukirchen
+
+requires:
+  - syckle (build)
 
 authors: 
   - Christian Neukirchen <chneukirchen@gmail.com>
@@ -18,7 +21,10 @@ description:
   suitable for embedding in (X)HTML, Atom, RSS, and arbitrary XML.
 
 resources:
-  homepage: http://rubyworks.github.com/xoxo
-  development: http://github.com/rubyworks/xoxo
-  repository: git://github.com/rubyworks/xoxo.git
+  home: http://rubyworks.github.com/xoxo
+  code: http://github.com/rubyworks/xoxo
+
+repositories:
+  public: git://github.com/rubyworks/xoxo.git
+
 

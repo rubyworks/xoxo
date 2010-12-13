@@ -1,8 +1,9 @@
-#!mast -x Syckfile lib meta test [A-Z]*
+#!mast -x Syckfile .ruby lib test [A-Z]*
+.ruby
 lib/xoxo.rb
-meta/package
-meta/profile
 test/test_xoxo.rb
+PROFILE
 README
 HISTORY
+VERSION
 COPYING
