@@ -32,7 +32,7 @@ rdoc:
   exclude  : ~
   main     : ~
   extra    : ~
-  output   : site/doc/api
+  output   : site/docs/api
   active   : true
 
 ri:
@@ -41,6 +41,11 @@ ri:
   exclude: ~
   output : ri
   active : true
+
+qedoc:
+  service: Custom
+  document: |
+    system "qedoc -t XOXO -o site/docs/qed qed/"
 
 dnote:
   service  : DNote
@@ -74,4 +79,8 @@ stats:
 #  sitemap:
 #    doc/rdoc: <%= name %>
 #  active  : false
+
+grancher:
+  service: Grancher
+  active: true
 

@@ -38,6 +38,8 @@ Simple way to generate XOXO.
 
   obj.to_xoxo
 
+For more details see the QED and API documentation.
+
 
 == INSTALLATION
 
