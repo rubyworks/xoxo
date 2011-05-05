@@ -19,7 +19,12 @@ suitable for embedding in (X)HTML, Atom, RSS, and arbitrary XML.
 
 * home: http://rubyworks.github.com/xoxo
 * code: http://github.com/rubyworks/xoxo
-* origin: http://chneukirchen.org/repos/xoxo-rb/
+
+The original version of this code was written by Christian Neukirchen,
+and can be found here[http://chneukirchen.org/repos/xoxo-rb/] and a
+blog post on it here[http://chneukirchen.org/blog/archive/2006/01/xoxo-rb-0-1-released.html].
+
+The offical XOXO format site is here[http://microformats.org/wiki/xoxo].
 
 
 == RELEASE NOTES
@@ -38,7 +43,7 @@ Simple way to generate XOXO.
 
 To install with RubyGems simply open a console and type:
 
-  gem install xoxo
+  $ gem install xoxo
 
 Local installation requires Setup.rb (gem install setup),
 then download the tarball package and type:
