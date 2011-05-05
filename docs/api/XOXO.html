@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: XOXO</title>
+
+  
+    <link rel="SHORTCUT ICON" href="./assets/icon/module.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="./assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="./assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="./assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#documentation pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+<body class="module">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="./assets/icon/module.png" align="absmiddle">&nbsp;
+      
+      <a href="./index.html">&quot;XOXO&quot;</a>&nbsp;
+      <a href="/">XOXO</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="./lib/xoxo_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/xoxo.rb">lib/xoxo.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+
+      <!-- Namespace Contents -->
+      
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li class="class"><a href="XOXO/Parser.html">XOXO::Parser</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#method-c-dump">::dump</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#method-c-load">::load</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="./COPYING_rdoc.html">COPYING.rdoc</a></li>
+        
+          <li class="file"><a href="./HISTORY_rdoc.html">HISTORY.rdoc</a></li>
+        
+          <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="./assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="./XOXO.html">XOXO</a></li>
+        
+          <li class="class"><a href="./XOXO/Parser.html">XOXO::Parser</a></li>
+        
+          <li class="class"><a href="./Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="./assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.2.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>XOXO</h1>
+      
+
+      
+<p><a href="XOXO.html">XOXO</a> is a Ruby <a href="XOXO.html">XOXO</a> parser
+and generator. It provides a Ruby API similar to Marshal and YAML (though
+more specific) to load and dump <a
+href="http://microformats.org/wiki/xoxo">XOXO</a>, an simple, open outline
+format written in standard XHTML and suitable for embedding in (X)HTML,
+Atom, RSS, and arbitrary XML.</p>
+
+    </div>
+
+    <!-- Constants -->
+    
+    <div id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt><a name="VERSION">VERSION</a></dt>
+        
+        <dd class="description"><p>xoxo.rb version number</p></dd>
+        
+      
+      </dl>
+    </div>
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="dump-method" class="method-detail ">
+        <a name="method-c-dump"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">dump</span><span
+            class="method-args">(struct, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>Return a <a href="XOXO.html">XOXO</a> string corresponding to the Ruby
+object <tt>struct</tt>, translated to the following rules:</p>
+<ul><li>
+<p>Arrays become ordered lists <tt>&lt;ol&gt;</tt>.</p>
+</li><li>
+<p>Hashes become definition lists <tt>&lt;dl&gt;</tt>, keys are stringified
+with <tt>to_s</tt>.</p>
+</li><li>
+<p>Everything else becomes stringified with <tt>to_s</tt> and wrapped in
+appropriate list elements (<tt>&lt;li&gt;</tt> or
+<tt>&lt;dt&gt;</tt>/<tt>&lt;dd&gt;</tt>).</p>
+</li></ul>
+
+<p>Additionally, you can pass these options on the <em>options</em> hash:</p>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p><tt>:html_wrap</tt> =&gt; <tt>true</tt></p></td>
+<td>
+<p>Wrap the <a href="XOXO.html">XOXO</a> with a basic XHTML 1.0 Transitional
+header.</p>
+</td></tr><tr><td class="rdoc-term"><p><tt>:css</tt> =&gt; <em>css</em></p></td>
+<td>
+<p>Reference <em>css</em> as stylesheet for the wrapped <a
+href="XOXO.html">XOXO</a> document.</p>
+</td></tr></table>
+          
+
+          
+          <div class="method-source-code"
+            id="dump-source">
+<pre>
+<span class="ruby-comment"># File lib/xoxo.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-identifier">struct</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">struct</span> = [<span class="ruby-identifier">struct</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">struct</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:html_wrap</span>]
+    <span class="ruby-identifier">result</span> = <span class="ruby-string">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//ENhttp://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;head profile=&quot;&quot;&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span>.<span class="ruby-identifier">strip</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:css</span>]
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%[&lt;style type=&quot;text/css&quot; &gt;@import &quot;#{options[:css]}&quot;;&lt;/style&gt;]</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;&lt;/head&gt;&lt;body&gt;&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">make_xoxo</span>(<span class="ruby-identifier">struct</span>, <span class="ruby-string">'xoxo'</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;&lt;/body&gt;&lt;/html&gt;&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">make_xoxo</span>(<span class="ruby-identifier">struct</span>, <span class="ruby-string">'xoxo'</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="load-method" class="method-detail ">
+        <a name="method-c-load"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">load</span><span
+            class="method-args">(xoxo)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>Load and return a <a href="XOXO.html">XOXO</a> structure from the String,
+IO or StringIO or <em>xoxo</em>.</p>
+          
+
+          
+          <div class="method-source-code"
+            id="load-source">
+<pre>
+<span class="ruby-comment"># File lib/xoxo.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">xoxo</span>)
+  <span class="ruby-identifier">structs</span> = <span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">xoxo</span>).<span class="ruby-identifier">parse</span>.<span class="ruby-identifier">structs</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">structs</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">structs</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">structs</span> = <span class="ruby-identifier">structs</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">structs</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+
