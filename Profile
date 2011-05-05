@@ -8,7 +8,7 @@ license   : chneukirchen
 copyright : Copyright (c) 2006 Christian Neukirchen
 
 requires:
-  - syckle (build)
+  - redline (build)
 
 authors: 
   - Christian Neukirchen <chneukirchen@gmail.com>
