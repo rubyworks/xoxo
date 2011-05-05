@@ -21,7 +21,7 @@ require 'rexml/parsers/pullparser'
 #
 module XOXO
   # xoxo.rb version number
-  VERSION = "1.0.1"
+  VERSION = "1.1.0"
 
   # Load and return a XOXO structure from the String, IO or StringIO or _xoxo_.
   def self.load(xoxo)
