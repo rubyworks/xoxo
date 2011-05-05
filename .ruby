@@ -21,7 +21,7 @@ maintainers: []
 requires: 
 - group: 
   - build
-  name: syckle
+  name: redline
   version: 0+
 suite: rubyworks
 manifest: MANIFEST.txt
