@@ -6,10 +6,9 @@ email:
   mailto  : ruby-talk@ruby-lang.org
   active  : true
 
-box:
-  service: Box
+gem:
+  service: Gem
   active : true
-  types  : [gem]
 
 testrb:
   service  : testrb
@@ -28,16 +27,16 @@ syntax:
 
 rdoc:
   service  : RDoc
-  template : redfish
-  include  : ~
+  format   : newfish
+  include  : [README.rdoc, HISTORY.rdoc, COPYING.rdoc, lib]
   exclude  : ~
   main     : ~
   extra    : ~
-  output   : doc
+  output   : site/doc/api
   active   : true
 
-ridoc:
-  service: RIDoc
+ri:
+  service: RI
   include: ~
   exclude: ~
   output : ri
@@ -59,13 +58,13 @@ stats:
   output   : ~
   active   : true
 
-vclog:
-  service  : VClog
-  format   : html   # xml, txt
-  layout   : rel    # gnu
-  typed    : false
-  output   : ~
-  active   : false
+#vclog:
+#  service  : VClog
+#  format   : html   # xml, txt
+#  layout   : rel    # gnu
+#  typed    : false
+#  output   : ~
+#  active   : false
 
 #rubyforge:
 #  service : Forge

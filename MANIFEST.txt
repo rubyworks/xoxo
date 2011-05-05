@@ -2,8 +2,9 @@
 .ruby
 lib/xoxo.rb
 test/test_xoxo.rb
-PROFILE
-README
-HISTORY
-VERSION
-COPYING
+HISTORY.rdoc
+Profile
+README.rdoc
+Version
+COPYING.rdoc
+Redfile

@@ -2,8 +2,6 @@
 #
 # Copyright (C) 2006 Christian Neukirchen
 #
-# Ruby License
-#
 # This module is free software. You may use, modify, and/or redistribute this
 # software under the same terms as Ruby.
 #
@@ -26,7 +24,6 @@ module XOXO
   VERSION = "1.0.1"
 
   # Load and return a XOXO structure from the String, IO or StringIO or _xoxo_.
-  #
   def self.load(xoxo)
     structs = Parser.new(xoxo).parse.structs
     while structs.kind_of?(Array) && structs.size == 1
@@ -51,7 +48,7 @@ module XOXO
   #                                 wrapped XOXO document.
   #
   def self.dump(struct, options={})
-    struct = [struct]  unless struct.kind_of? Array
+    struct = [struct] unless struct.kind_of? Array
 
     if options[:html_wrap]
       result = <<EOF.strip
@@ -73,6 +70,9 @@ EOF
 
   private
 
+  # Serialize an object in XOXO format.
+  #
+  # @return [String] an XOXO document
   def self.make_xoxo(struct, class_name=nil)
     s = ''
     case struct
@@ -113,19 +113,39 @@ EOF
     when String
       s << struct
 
+    when Numeric
+      s << struct.to_s
+
+    when Struct
+      h = {}
+      struct.each_pair do |k,v|
+        h[k] = v
+      end
+      s = make_xoxo(h, class_name)
+
     else
-      s << struct.to_s          # too gentle?
+      h = {}
+      struct.instance_variables.each do |iv|
+        key = iv.sub(/^@/, '')
+        h[key] = struct.instance_variable_get(iv)
+      end
+      s = make_xoxo(h, class_name)
     end
 
     s
   end
+
 end
 
-class XOXO::Parser              # :nodoc:
+class XOXO::Parser
+
+  #
   CONTAINER_TAGS = %w{dl ol ul}
 
+  # @return [Array]
   attr_reader :structs
 
+  # Initialize new XOXO Parser.
   def initialize(xoxo)
     @parser = REXML::Parsers::PullParser.new(xoxo)
 
@@ -135,6 +155,11 @@ class XOXO::Parser              # :nodoc:
     @tags = []
   end
 
+  # Parse XOXO document.
+  #
+  # The end result of parsing is stored in the +structs+ attribute.
+  #
+  # @return [Parser] the current parser object
   def parse
     while @parser.has_next?
       res = @parser.pull
@@ -207,6 +232,10 @@ class XOXO::Parser              # :nodoc:
 
   private
 
+  # Take a hash of attributes and make sure the keys are all lowercase.
+  #
+  # @param [Hash] the attributes hash
+  # @return [Hash] the normalized attributes hash
   def normalize_attrs(attrs)
     attrs.keys.find_all { |k, v| k != k.downcase }.each { |k, v|
       v = v.downcase  if k == "rel" || k == "type"
@@ -216,6 +245,7 @@ class XOXO::Parser              # :nodoc:
     attrs
   end
 
+  #
   def push(struct)
     if struct == {} && @structs.last.kind_of?(Hash) &&
         @structs.last.has_key?('url') &&
@@ -233,7 +263,6 @@ end
 class Object
 
   # Dump object as XOXO.
-
   def to_xoxo(*args)
     XOXO.dump(self,*args)
   end
