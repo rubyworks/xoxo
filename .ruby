@@ -28,9 +28,9 @@ repositories:
   scm: git
   name: upstream
 resources:
-  Homepage: http://rubyworks.github.com/xoxo
-  Source Code: http://github.com/rubyworks/xoxo
-  Mailing List: http://groups.google.com/rubyworks-mailinglist
+  home: http://rubyworks.github.com/xoxo
+  code: http://github.com/rubyworks/xoxo
+  mail: http://groups.google.com/rubyworks-mailinglist
 extra: {}
 load_path:
 - lib

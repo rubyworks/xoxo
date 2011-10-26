@@ -10,6 +10,9 @@ gem:
 github:
   folder: pages
 
+qed:
+  files: qed/
+
 qedoc:
   files: qed/
   title: XOXO Demonstrandum
