@@ -29,7 +29,7 @@ serializes to:
 
   {"one"=>1, "two"=>2, "three"=>3}.to_xoxo
 
-On Ruby 1.9, serializes to:
+On Ruby 1.9, this becomes:
 
   <ol class="xoxo">
   <li>
