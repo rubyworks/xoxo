@@ -1,5 +1,14 @@
 = RELEASE HISTORY
 
+== 1.2.1 | 2011-10-27
+
+Add missing QED.rdoc file, so it will show up in YARD docs.
+
+Changes:
+
+* Add QED.rdoc to gem.
+
+
 == 1.2.0 | 2011-10-26
 
 Converting Hashes with 'url' for a key are treated completely as `a` tags.
