@@ -21,7 +21,7 @@ require 'rexml/parsers/pullparser'
 #
 module XOXO
   # xoxo.rb version number
-  VERSION = "1.1.0"
+  VERSION = "1.2.0"  # :erb: VERSION = "<%= version %>"
 
   # Load and return a XOXO structure from the String, IO or StringIO or _xoxo_.
   def self.load(xoxo)
@@ -82,6 +82,15 @@ EOF
   def self.make_xoxo(struct, class_name=nil)
     s = ''
     case struct
+    when Assoc
+      unless struct.empty?
+        s << "<dl>"
+        struct.each do |(key, value)|
+          s << "<dt>" << key.to_s << "</dt><dd>" << make_xoxo(value) << "</dd>"
+        end
+        s << "</dl>"
+      end
+
     when Array
       if class_name
         s << %Q[<ol class="#{class_name}">]
@@ -106,7 +115,7 @@ EOF
       else
         unless struct.empty?
           s << "<dl>"
-          struct.each do |(key, value)|
+          struct.each do |key, value|
             s << "<dt>" << key.to_s << "</dt><dd>" << make_xoxo(value) << "</dd>"
           end
           s << "</dl>"
@@ -120,22 +129,26 @@ EOF
       s << struct.to_s
 
     when Struct
-      h = {}
+      a = Assoc.new
       struct.each_pair do |k,v|
-        h[k] = v
+        a << [k,v]
       end
-      s = make_xoxo(h, class_name)
+      s = make_xoxo(a, class_name)
 
     else
-      h = {}
+      a = Assoc.new
       struct.instance_variables.each do |iv|
         key = iv.to_s.sub(/^@/, '')
-        h[key] = struct.instance_variable_get(iv)
+        a << [key, struct.instance_variable_get(iv)]
       end
-      s = make_xoxo(h, class_name)
+      s = make_xoxo(a, class_name)
     end
 
     s
+  end
+
+  # Used to distinguish arrays from assoc arrays.
+  class Assoc < Array
   end
 
 end
