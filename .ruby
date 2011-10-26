@@ -39,6 +39,7 @@ created: '2006-01-01'
 summary: XOXO Parser and Generator
 title: XOXO
 version: 1.2.0
+name: xoxo
 description: ! "XOXO is a Ruby XOXO parser and generator. It provides a Ruby API \nsimilar
   to Marshal and YAML (though more specific) to load and dump\nXOXO[http://microformats.org/wiki/xoxo],
   an simple, open outline\nformat written in standard XHTML and suitable for embedding
