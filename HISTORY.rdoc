@@ -9,6 +9,7 @@ keys. This release also modernizes the build configuraiton.
 Changes:
 
 * Hashes with 'url' keys are ONLY `a` tags.
+* Use XOXO::Assoc to keep definition lists in order if possible.
 * Modernize build configuration.
 
 
