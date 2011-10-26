@@ -29,11 +29,24 @@ serializes to:
 
   {"one"=>1, "two"=>2, "three"=>3}.to_xoxo
 
-On some implementations of Ruby order is not preserved so,
+With some implementations of Ruby Hash order is not preserved. So,
 
+  @_.assert.include?('<ol class="xoxo">')
   @_.assert.include?('<dt>one</dt><dd>1</dd>')
   @_.assert.include?('<dt>two</dt><dd>2</dd>')
   @_.assert.include?('<dt>three</dt><dd>3</dd>')
+
+It would otherwise look like this:
+
+  <ol class="xoxo">
+  <li>
+    <dl>
+    <dt>a</dt><dd>1</dd>
+    <dt>b</dt><dd>2</dd>
+    <dt>c</dt><dd>3</dd>
+    </dl>
+  </li>
+  </ol>
 
 == Struct
 
@@ -42,11 +55,24 @@ On some implementations of Ruby order is not preserved so,
 
   s.to_xoxo
 
-On some implementations of Ruby order is not preserved so,
+With some implementations of Ruby Stuct order is not preserved. So,
 
+  @_.assert.include?('<ol class="xoxo">')
   @_.assert.include?('<dt>a</dt><dd>1</dd>')
   @_.assert.include?('<dt>b</dt><dd>2</dd>')
   @_.assert.include?('<dt>c</dt><dd>3</dd>')
+
+It would otherwise look like this:
+
+  <ol class="xoxo">
+  <li>
+    <dl>
+    <dt>a</dt><dd>1</dd>
+    <dt>b</dt><dd>2</dd>
+    <dt>c</dt><dd>3</dd>
+    </dl>
+  </li>
+  </ol>
 
 == Object
 
@@ -60,16 +86,11 @@ On some implementations of Ruby order is not preserved so,
 
   c.to_xoxo
 
-serializes to:
+Instance attributes are not stored in order. So
 
-  <ol class="xoxo">
-  <li>
-    <dl>
-    <dt>a</dt><dd>1</dd>
-    <dt>b</dt><dd>2</dd>
-    <dt>c</dt><dd>3</dd>
-    </dl>
-  </li>
-  </ol>
+  @_.assert.include?('<ol class="xoxo">')
+  @_.assert.include?('<dt>a</dt><dd>1</dd>')
+  @_.assert.include?('<dt>b</dt><dd>2</dd>')
+  @_.assert.include?('<dt>c</dt><dd>3</dd>')
 
-QED.
+
