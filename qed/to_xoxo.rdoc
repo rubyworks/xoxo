@@ -29,20 +29,11 @@ serializes to:
 
   {"one"=>1, "two"=>2, "three"=>3}.to_xoxo
 
-On Ruby 1.9, this becomes:
+On some implementations of Ruby order is not preserved so,
 
-  <ol class="xoxo">
-  <li>
-    <dl>
-    <dt>one</dt><dd>1</dd>
-    <dt>two</dt><dd>2</dd>
-    <dt>three</dt><dd>3</dd>
-    </dl>
-  </li>
-  </ol>
-
-On Ruby 1.8 or older, order is not preserved so we will forgo the 
-serialization test.
+  @_.assert.include?('<dt>one</dt><dd>1</dd>')
+  @_.assert.include?('<dt>two</dt><dd>2</dd>')
+  @_.assert.include?('<dt>three</dt><dd>3</dd>')
 
 == Struct
 
@@ -51,20 +42,11 @@ serialization test.
 
   s.to_xoxo
 
-On Ruby 1.9, this becomes:
+On some implementations of Ruby order is not preserved so,
 
-  <ol class="xoxo">
-  <li>
-    <dl>
-    <dt>a</dt><dd>1</dd>
-    <dt>b</dt><dd>2</dd>
-    <dt>c</dt><dd>3</dd>
-    </dl>
-  </li>
-  </ol>
-
-On Ruby 1.8 or older, order is not preserved so we will forgo the 
-serialization test.
+  @_.assert.include?('<dt>a</dt><dd>1</dd>')
+  @_.assert.include?('<dt>b</dt><dd>2</dd>')
+  @_.assert.include?('<dt>c</dt><dd>3</dd>')
 
 == Object
 
