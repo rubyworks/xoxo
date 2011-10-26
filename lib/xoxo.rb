@@ -126,7 +126,7 @@ EOF
     else
       h = {}
       struct.instance_variables.each do |iv|
-        key = iv.sub(/^@/, '')
+        key = iv.to_s.sub(/^@/, '')
         h[key] = struct.instance_variable_get(iv)
       end
       s = make_xoxo(h, class_name)
