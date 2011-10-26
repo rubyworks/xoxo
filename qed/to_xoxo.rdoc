@@ -29,7 +29,7 @@ serializes to:
 
   {"one"=>1, "two"=>2, "three"=>3}.to_xoxo
 
-serializes to:
+On Ruby 1.9, serializes to:
 
   <ol class="xoxo">
   <li>
@@ -40,6 +40,8 @@ serializes to:
     </dl>
   </li>
   </ol>
+
+On Ruby 1.8 or older, order is not preserved.
 
 == Struct
 
