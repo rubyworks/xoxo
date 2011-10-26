@@ -1,7 +1,8 @@
 = XOXO
 
 {Homepage}[http://rubyworks.github.com/xoxo] |
-{Source Code}[http://github.com/rubyworks/xoxo]
+{Source Code}[http://github.com/rubyworks/xoxo] |
+{Issue Tracker}[http://github.com/rubyworks/xoxo/issues]
 
 {<img src="http://travis-ci.org/rubyworks/xoxo.png" />}[http://travis-ci.org/rubyworks/xoxo]
 
@@ -64,7 +65,7 @@ Windows users use 'ruby setup.rb all'.
 
 Copyright (c) 2006 Christian Neukirchen, Rubyworks
 
-This program is ditributable under the terms of the *FreeBSD* license.
+This program is ditributable under the terms of the *MIT* license.
 
 See COPYING.rdoc file for details.
 
