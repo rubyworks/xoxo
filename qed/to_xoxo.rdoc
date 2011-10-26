@@ -41,7 +41,8 @@ On Ruby 1.9, this becomes:
   </li>
   </ol>
 
-On Ruby 1.8 or older, order is not preserved.
+On Ruby 1.8 or older, order is not preserved so we will forgo the 
+serialization test.
 
 == Struct
 
@@ -50,7 +51,7 @@ On Ruby 1.8 or older, order is not preserved.
 
   s.to_xoxo
 
-serializes to:
+On Ruby 1.9, this becomes:
 
   <ol class="xoxo">
   <li>
@@ -61,6 +62,9 @@ serializes to:
     </dl>
   </li>
   </ol>
+
+On Ruby 1.8 or older, order is not preserved so we will forgo the 
+serialization test.
 
 == Object
 
