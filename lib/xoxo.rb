@@ -72,6 +72,12 @@ EOF
 
   # Serialize an object in XOXO format.
   #
+  # Note that Hash's with a 'url' key are converted to `<a>` tags instead
+  # of `<dl>` tags. If you need to work around this you can convert the key
+  # to a Symbol instead of a String. 
+  #
+  # TODO: Should it be the other way around, Symbol instead of String key?
+  # 
   # @return [String] an XOXO document
   def self.make_xoxo(struct, class_name=nil)
     s = ''
@@ -88,26 +94,23 @@ EOF
       s << "</ol>"
 
     when Hash
-      d = struct.dup
-      if d.has_key? 'url'
-        s << '<a href="' << d['url'].to_s << '" '
-        text = d.fetch('text') { d.fetch('title', d['url']) }
-        %w[title rel type].each { |tag|
-          if d.has_key? tag
-            s << tag.to_s << '="' << make_xoxo(d.delete(tag)) << '" '
+      if struct.has_key? 'url'
+        d = struct.dup
+        u = d.delete('url')       
+        t = d.delete('text') { d.delete('title', u) }
+        s << '<a href="' << u.to_s << '" '
+        d.each do |tag, value|
+          s << tag.to_s << '="' << make_xoxo(d.delete(tag)) << '" '
+        end
+        s << '>' << make_xoxo(t) << '</a>'
+      else
+        unless struct.empty?
+          s << "<dl>"
+          struct.each do |(key, value)|
+            s << "<dt>" << key.to_s << "</dt><dd>" << make_xoxo(value) << "</dd>"
           end
-        }
-        s << '>' << make_xoxo(text) << '</a>'
-        d.delete 'text'
-        d.delete 'url'
-      end
-
-      unless d.empty?
-        s << "<dl>"
-        d.each { |key, value|
-          s << "<dt>" << key.to_s << "</dt><dd>" << make_xoxo(value) << "</dd>"
-        }
-        s << "</dl>"
+          s << "</dl>"
+        end
       end
 
     when String

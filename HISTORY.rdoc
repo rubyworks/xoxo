@@ -2,12 +2,13 @@
 
 == 1.2.0 | 2011-10-26
 
-The is a maintenance release. Functionally of the library has not
-changed. The major version bump is just to mark this release as
-an inflection point in development.
+Converting Hashes with 'url' for a key are treated completely as `a` tags.
+Before they were converted into `a` tags and `dl` tags for any "left over" 
+keys. This release also modernizes the build configuraiton.
 
 Changes:
 
+* Hashes with 'url' keys are ONLY `a` tags.
 * Modernize build configuration.
 
 
