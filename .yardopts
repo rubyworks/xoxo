@@ -1,0 +1,8 @@
+--title "XOXO"
+--readme README.rdoc
+--protected
+--private
+lib/**/*.rb
+-
+[A-Z]*.*
+

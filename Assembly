@@ -1,0 +1,34 @@
+---
+email:
+  mailto:
+    - ruby-talk@ruby-lang.org
+    - rubyworks-mailinglist@googlegroups.com
+
+gem:
+  active: true
+
+github:
+  gh-pages: site
+  active: false
+
+qedoc:
+  files: qed/
+  title: XOXO Demonstrandum
+  output: QED.rdoc
+
+dnote:
+  output: log/NOTES.rdoc
+
+vclog:
+  output:
+    - log/Chages.rdoc
+    - log/History.rdoc
+
+#rubyforge:
+#  service : Forge
+#  unixname: <%= collection %>
+#  groupid : ~
+#  package : <%= name %>
+#  sitemap:
+#    doc/rdoc: <%= name %>
+#  active  : false

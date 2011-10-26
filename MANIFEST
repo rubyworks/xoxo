@@ -1,0 +1,10 @@
+#!mast .ruby .yardopts bin lib man qed spec test [A-Z]*.*
+.ruby
+.yardopts
+lib/xoxo.rb
+qed/applique/xoxo.rb
+qed/to_xoxo.rdoc
+test/test_xoxo.rb
+HISTORY.rdoc
+README.rdoc
+COPYING.rdoc
