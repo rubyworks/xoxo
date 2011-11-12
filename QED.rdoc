@@ -1,0 +1,97 @@
+= to_xoxo
+
+Any object can be serialized as an XOXO document easily with the #to_xoxo
+method.
+
+== String
+
+  "This is an example".to_xoxo
+
+serializes to:
+
+  <ol class="xoxo">
+    <li>This is an example</li>
+  </ol>
+
+== Array
+
+  ["one", "two", "three"].to_xoxo
+
+serializes to:
+
+  <ol class="xoxo">
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+  </ol>
+
+== Hash
+
+  {"one"=>1, "two"=>2, "three"=>3}.to_xoxo
+
+With some implementations of Ruby Hash order is not preserved. So,
+
+  @_.assert.include?('<ol class="xoxo">')
+  @_.assert.include?('<dt>one</dt><dd>1</dd>')
+  @_.assert.include?('<dt>two</dt><dd>2</dd>')
+  @_.assert.include?('<dt>three</dt><dd>3</dd>')
+
+It would otherwise look like this:
+
+  <ol class="xoxo">
+  <li>
+    <dl>
+    <dt>a</dt><dd>1</dd>
+    <dt>b</dt><dd>2</dd>
+    <dt>c</dt><dd>3</dd>
+    </dl>
+  </li>
+  </ol>
+
+== Struct
+
+  c = Struct.new(:a, :b, :c)
+  s = c.new(1,2,3)
+
+  s.to_xoxo
+
+With some implementations of Ruby Stuct order is not preserved. So,
+
+  @_.assert.include?('<ol class="xoxo">')
+  @_.assert.include?('<dt>a</dt><dd>1</dd>')
+  @_.assert.include?('<dt>b</dt><dd>2</dd>')
+  @_.assert.include?('<dt>c</dt><dd>3</dd>')
+
+It would otherwise look like this:
+
+  <ol class="xoxo">
+  <li>
+    <dl>
+    <dt>a</dt><dd>1</dd>
+    <dt>b</dt><dd>2</dd>
+    <dt>c</dt><dd>3</dd>
+    </dl>
+  </li>
+  </ol>
+
+== Object
+
+  class C
+    def initialize(a,b,c)
+      @a, @b, @c = a, b, c
+    end
+  end
+
+  c = C.new(1,2,3)
+
+  c.to_xoxo
+
+Instance attributes are not stored in order. So
+
+  @_.assert.include?('<ol class="xoxo">')
+  @_.assert.include?('<dt>a</dt><dd>1</dd>')
+  @_.assert.include?('<dt>b</dt><dd>2</dd>')
+  @_.assert.include?('<dt>c</dt><dd>3</dd>')
+
+
+

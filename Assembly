@@ -8,23 +8,25 @@ gem:
   active: true
 
 github:
-  folder: pages
+  gh_pages: web
 
 qed:
-  files: qed/
+  files: qed
 
 qedoc:
-  files: qed/
+  files: qed
   title: XOXO Demonstrandum
   output: QED.rdoc
 
 dnote:
-  output: log/NOTES.rdoc
+  title: Source Notes
+  output: log/notes.html
 
 vclog:
   output:
-    - log/Chages.rdoc
-    - log/History.rdoc
+    - log/change.html
+    - log/history.html
+
 
 #rubyforge:
 #  service : Forge

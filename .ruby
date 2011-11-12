@@ -1,6 +1,6 @@
 ---
 source:
-- meta
+- var
 authors:
 - name: Thomas Sawyer
   email: transfire@gmail.com
@@ -45,4 +45,4 @@ description: ! "XOXO is a Ruby XOXO parser and generator. It provides a Ruby API
   a simple, open outline\nformat written in standard XHTML and suitable for embedding
   in\n(X)HTML, Atom, RSS, and arbitrary XML."
 organization: rubyworks
-date: '2011-10-26'
+date: '2011-11-11'

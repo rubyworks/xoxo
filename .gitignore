@@ -4,9 +4,7 @@ doc
 log
 man/man1/*.1
 man/man1/*.1.html
-pages
 pkg
 tmp
-site
+web
 work/sandbox
-QED.rdoc
