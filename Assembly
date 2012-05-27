@@ -11,12 +11,12 @@ github:
   gh_pages: web
 
 qed:
-  files: qed
+  files: demo
 
 qedoc:
-  files: qed
-  title: XOXO Demonstrandum
-  output: QED.rdoc
+  files: demo
+  title: XOXO Demonstrations
+  output: DEMO.rdoc
 
 dnote:
   title: Source Notes

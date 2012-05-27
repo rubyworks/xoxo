@@ -1,4 +1,4 @@
-.reap/digest
+.fire/digest
 .yardoc
 doc
 log
@@ -7,4 +7,5 @@ man/man1/*.1.html
 pkg
 tmp
 web
+wiki
 work/sandbox
